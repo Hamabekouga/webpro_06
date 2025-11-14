@@ -30,10 +30,55 @@ app.get("/omikuji1", (req, res) => {
 app.get("/omikuji2", (req, res) => {
   const num = Math.floor( Math.random() * 6 + 1 );
   let luck = '';
-  if( num==1 ) luck = '大吉';
-  else if( num==2 ) luck = '中吉';
-
+  if( num==1 ) {
+    luck = '大吉';
+  }
+  else if( num==2 ){ 
+    luck = '吉';
+  }
+  else if( num==3){
+    luck = '中吉';
+  }
+  else if( num==4){
+    luck = '小吉';
+  }
+  else if( num==5){
+    luck = '末吉';
+  }
+  else if( num==6){
+    luck = '凶';
+  }
   res.render( 'omikuji2', {result:luck} );
+});
+app.get("/omikuji3", (req, res) => {
+  const num = Math.floor( Math.random() * 6 + 1 );
+  let luck = '';
+  let comment = '';
+  if( num==1 ) {
+    luck = '大吉';
+    comment = '絶好調です';
+  }
+  else if( num==2 ){ 
+    luck = '吉';
+    comment = 'まずまず好調です';
+  }
+  else if( num==3){
+    luck = '中吉';
+    comment = 'ちょい好調です';
+  }
+  else if( num==4){
+    luck = '小吉';
+    comment = '普通です';
+  }
+  else if( num==5){
+    luck = '末吉';
+    comment = 'つまらないです';
+  }
+  else if( num==6){
+    luck = '凶';
+    comment = '絶不調です';
+  }
+  res.render( 'omikuji3', {result:luck, comment:comment} );
 });
 
 app.listen(8080, () => console.log("Example app listening on port 8080!"));
