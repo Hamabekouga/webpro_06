@@ -14,22 +14,30 @@ let station = [
 ];
 
 app.get("/keiyo", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
-  res.render('db1', { data: station });
-});
-let station1 = [
+  let station1 = [
   { id:1, code:"JE01", name:"東京駅"},
   { id:2, code:"JE07", name:"舞浜駅"},
   { id:3, code:"JE12", name:"新習志野駅"},
   { id:4, code:"JE13", name:"幕張豊砂駅"},
   { id:5, code:"JE14", name:"海浜幕張駅"},
   { id:6, code:"JE05", name:"新浦安駅"},
-];
+];// 本来ならここにDBとのやり取りが入る
+  res.render('db1', { data: station });
+});
+
 
 app.get("/keiyoo", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
+  let station1 = [
+  { id:1, code:"JE01", name:"東京駅"},
+  { id:2, code:"JE07", name:"舞浜駅"},
+  { id:3, code:"JE12", name:"新習志野駅"},
+  { id:4, code:"JE13", name:"幕張豊砂駅"},
+  { id:5, code:"JE14", name:"海浜幕張駅"},
+  { id:6, code:"JE05", name:"新浦安駅"},
+];// 本来ならここにDBとのやり取りが入る
   res.render('db2', { data: station1 });
 });
+app.get("/keiyo3")
 app.get("/keiyo_add", (req, res) =>{
   let id = req.query.id;
   let code = req.query.code;
@@ -64,6 +72,18 @@ app.get("/keiyo2/:number", (req, res) => {
   const detail = station2[ number ];
   res.render('keiyo2_detail', {data: detail} );
 });
+app.get("/keiyo2_add", (req, res) =>{
+  let id = req.query.id;
+  let code = req.query.code;
+  let name = req.query.name;
+  let change = req.query.change;
+  let passengers = req.query.passengers;  
+  let distance = req.query.distance;
+  let newdata = {id: id, code: code, name: name, change: change, passengers: passengers, distance: distance};
+  station.push( newdata );
+  res.render('keiyo2', {data:station2});
+})
+
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
