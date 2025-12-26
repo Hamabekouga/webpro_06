@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の詳細</h2>
+  <img src="/public/pet<%= data.name %>.png" alt="ペットモール" width="400"><br>
+  <table>
+    <tr><td>ペットと共に入館</td><td><%= data.pet %></td></tr>
+    <tr><td>駐車場</td><td><%= data.parking %></td></tr>
+    <tr><td>ジャンル</td><td><%= data.shopjenre %></td></tr>
+    <tr><td>主なお店</td><td><%= data.examshop %></td></tr>
+   <% Object.keys(data).forEach(function(key) { %>
+      <% 
+        const List = ['id', 'name', 'pet', 'parking', 'shopjenre', 'examshop'];
+        const NG = List.includes(key);
+      %>
+
+        <% if (NG == false) { %>
+
+          <tr><td><%= key %></td><td><%= data[key] %></td></tr>
+
+        <% } %>
+    <% }); %>
+  </table>
+  <br><a href="/mall/1/PET/edit/<%= id %>">編集</a></br>
+  <br><a href="/mall/1/PET/create/<%= id %>">追加</a></br>
+  <br><a href="/mall/1/PET/delete/<%= id %>">削除</a></br>
+  <a href="/mall/1">階数選択に戻る</a>
+</body>
+</html>

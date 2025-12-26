@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>都道府県</title>
+</head>
+<body>
+  <h1>九州・沖縄地方</h1>
+  <img src="/public/kyushu.png" alt="九州地方" width="500"><br>
+
+  <h2>各都道府県の詳細</h2>
+  <table>
+    <tr><th>都道府県名</th></tr>
+      <% let number = 1 %>
+      <% for( let row of data ) { %>
+        <td><a href="/religion/5/kyusyu/<%= number %>"><%= row.name %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <a href="/religion">地方選択に戻る</a>
+</body>
+</html>

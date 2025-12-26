@@ -1,0 +1,37 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の編集</h2>
+  <form action="/mall/0/GRAND/update/<%= data.id  %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>ペットと共に入館</td><td><input type="text" name="pet" value="<%= data.pet %>"></td></tr>
+      <tr><td>駐車場</td><td><input type="text" name="parking" value="<%= data.parking %>"></td></tr>
+      <tr><td>ジャンル</td><td><input type="text" name="shopjenre" value="<%= data.shopjenre %>"></td></tr>
+      <tr><td>主なお店</td><td><input type="text" name="examshop" value="<%= data.examshop %>"></td></tr>
+
+      <% Object.keys(data).forEach(function(key) { %>
+        <% 
+          const List = ['id', 'name', 'pet', 'parking', 'shopjenre', 'examshop'];
+          const NG = List.includes(key);
+        %>
+    
+      <% if (NG == false) { %>
+        
+            
+            
+        <tr><td><label><%= key %> </label></td><td><input type="text" name="<%= key %>" value="<%= data[key] %>"></td></tr>
+
+      <% } %>
+
+    <% }); %>
+    </table>
+    <input type="submit" values="登録">
+  </form>
+  <a href="/mall/0/GRAND/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <h2><%= data.name %>の編集</h2>
+  <form action="/kinds/2/skytree/update/<%= data.id  %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>位置</td><td><input type="text" name="place" value="<%= data.place %>"></td></tr>
+      <tr><td>特徴</td><td><input type="text" name="feat" value="<%= data.feat %>"></td></tr>
+      <tr><td>構造</td><td><input type="text" name="struct" value="<%= data.struct %>"></td></tr>
+      <tr><td>開館時間</td><td><input type="text" name="time" value="<%= data.time %>"></td></tr>
+
+      <% Object.keys(data).forEach(function(key) { %>
+        <% 
+          const List = ['id', 'name', 'place', 'feat', 'struct', 'time'];
+          const NG = List.includes(key);
+        %>
+    
+      <% if (NG == false) { %>
+        
+        <tr><td><label><%= key %> </label></td><td><input type="text" name="<%= key %>" value="<%= data[key] %>"></td></tr>
+
+      <% } %>
+
+    <% }); %>
+    </table>
+    <input type="submit" values="登録">
+  </form>
+  <a href="/kinds/2/skytree/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>削除画面</title>
+</head>
+<body>
+    <h1><%= data.name %>のデータ削除</h1>
+    <form action="/mall/0/GRAND/delete/<%= data.id %>" method="POST">
+        <input type="checkbox" name="deletething" value="pet"id="pet">
+        <label for="pet">ペットと共に入館 (<%= data.pet %>)</label><br>
+        <input type="checkbox" name="deletething" value="parking" id="parking">
+        <label for="parking">駐車場 (<%= data.parking %>)</label><br>
+        <input type="checkbox" name="deletething" value="shopjenre" id="shopjenre">
+        <label for="shopjenre">ジャンル (<%= data.shopjenre %>)</label><br>
+        <input type="checkbox" name="deletething" value="examshop" id="examshop">
+        <label for="examshop">主なお店 (<%= data.examshop %>)</label><br>
+
+      <% Object.keys(data).forEach(function(key) { %>
+        <% 
+          const List = ['id', 'name', 'pet', 'parking', 'shopjenre', 'examshop'];
+          const NG = List.includes(key);
+        %>
+    
+      <% if (NG == false) { %>
+        
+            
+            
+            <input type="checkbox" name="deletething" value= "<%= key %>"id="<%= key %>">
+            <label><%= key %> </label><label for="key">(<%= data[key] %>)</label><br>
+
+      <% } %>
+
+    <% }); %>
+        <br>
+        <input type="submit" value="削除">        
+
+
+    </ul>
+    </form>
+    <a href="/mall/0/GRAND/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>

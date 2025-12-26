@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>削除画面</title>
+</head>
+<body>
+    <h1><%= data.name %>のデータ削除</h1>
+    <form action="/religion/5/kyusyu/delete/<%= data.id %>" method="POST">
+        <input type="checkbox" name="deletething" value="capital"id="capital">
+        <label for="capital">県庁所在市 (<%= data.capital %>)</label><br>
+        <input type="checkbox" name="deletething" value="religion" id="religion">
+        <label for="religion">地方 (<%= data.religion %>)</label><br>
+        <input type="checkbox" name="deletething" value="population" id="population">
+        <label for="population">人口 (<%= data.population %>)</label><br>
+        <input type="checkbox" name="deletething" value="Gdcity" id="Gdcity">
+        <label for="Gdcity">政令指定都市 (<%= data.Gdcity %>)</label><br>
+        <input type="checkbox" name="deletething" value="RCcity" id="RCcity">
+        <label for="RCcity">地方中枢都市 (<%= data.RCcity %>)</label><br>
+        <input type="checkbox" name="deletething" value="fls" id="fls">
+        <label for="fls">名物 (<%= data.fls %>)</label><br>
+      <% Object.keys(data).forEach(function(key) { %>
+        <% 
+          const List = ['id', 'name', 'capital', 'Gdcity', 'RCcity', 'fls', 'religion', 'population'];
+          const NG = List.includes(key);
+        %>
+    
+      <% if (NG == false) { %>
+        
+
+            
+            <input type="checkbox" name="deletething" value= "<%= key %>"id="<%= key %>">
+            <label><%= key %> </label><label for="key">(<%= data[key] %>)</label><br>
+
+      <% } %>
+
+    <% }); %>
+        <br>
+        <input type="submit" value="削除">        
+
+
+    </ul>
+    </form>
+    <a href="/religion/5/kyusyu/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>

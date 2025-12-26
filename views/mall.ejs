@@ -1,0 +1,19 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>イオンモール幕張新都心</title>
+</head>
+<body>
+  <h2>イオンモール幕張新都心の詳細</h2>
+  <img src="/public/AEON.jpg" alt="イオンモール" width="500">
+  <table>
+    <tr><th>各モール名</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <td><a href="/mall/<%= number %>"><%= row.mall %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+</body>
+</html>

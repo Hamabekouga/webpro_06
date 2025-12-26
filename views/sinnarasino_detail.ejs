@@ -1,0 +1,33 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= data.name %></title>
+</head>
+<body>
+  <img src="/public/s<%= data.name %>.jpg" alt="<%= data.name %>" width="500"><br>
+  <h2><%= data.name %>の詳細</h2>
+  <table>
+    <tr><td>位置</td><td><%= data.place %></td></tr>
+    <tr><td>特徴</td><td><%= data.feat %></td></tr>
+    <tr><td>構造</td><td><%= data.struct %></td></tr>
+    <tr><td>教室表記</td><td><%= data.nota %></td></tr>
+   <% Object.keys(data).forEach(function(key) { %>
+      <% 
+        const List = ['id', 'name', 'place', 'feat', 'struct', 'nota'];
+        const NG = List.includes(key);
+      %>
+
+        <% if (NG == false) { %>
+
+          <tr><td><%= key %></td><td><%= data[key] %></td></tr>
+
+        <% } %>
+    <% }); %>
+  </table>
+  <br><a href="/kinds/0/sinnarasino/edit/<%= id %>">編集</a></br>
+  <br><a href="/kinds/0/sinnarasino/create/<%= id %>">追加</a></br>
+  <br><a href="/kinds/0/sinnarasino/delete/<%= id %>">削除</a></br>
+  <a href="/kinds/0">キャンパスの詳細に戻る</a>
+</body>
+</html>

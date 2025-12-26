@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>日本</title>
+</head>
+<body>
+  <h1>日本</h1>
+  <img src="/public/japan.png" alt="日本" width="300"><br>
+  <h2>各地方の詳細</h2>
+  <table>
+    <tr><th>地方名</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <td><a href="/religion/<%= number %>"><%= row.religion %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+</body>
+</html>

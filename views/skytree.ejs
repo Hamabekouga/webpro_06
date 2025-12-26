@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>東京スカイツリータウン</title>
+</head>
+<body>
+  <h2>東京スカイツリータウンキャンパスの詳細</h2>
+  <img src="/public/skytree.jpg" alt="スカイツリータウンキャンパス" width="500"><br>
+  <table>
+    <tr><th>施設名</th></tr>
+      <% let number = 1 %>
+      <% for( let row of data ) { %>
+        <td><a href="/kinds/2/skytree/<%= number %>"><%= row.name %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  <a href="/kinds">キャンパス選択に戻る</a>
+</body>
+</html>

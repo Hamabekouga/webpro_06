@@ -1,0 +1,20 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>千葉工業大学</title>
+</head>
+<body>
+  <h1>千葉工業大学</h1>
+  <img src="/public/chibakougyo.jpg" alt="千葉工業大学" width="500"><br>
+  <h2>各キャンパスの詳細</h2>
+  <table>
+    <tr><th>キャンパス名</th></tr>
+      <% let number = 0 %>
+      <% for( let row of data ) { %>
+        <td><a href="/kinds/<%= number %>"><%= row.kinds %></a></td></tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+</body>
+</html>

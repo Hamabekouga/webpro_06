@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>新規登録</title>
+</head>
+<body>
+    <form action="/religion/4/sikoku/create/<%= data.id %>" method="POST">
+        <label for="newthing">項目:</label>
+        <input type="text" name="newthing" required>
+        <p>↑この項目は変更できません</p><br>
+        <label for="newvalue">内容:</label>
+        <input type="text" name="newvalue" required><br>
+        <input type="submit" values="追加">
+    </form>
+    <a href="/religion/4/sikoku/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>

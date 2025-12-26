@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>削除画面</title>
+</head>
+<body>
+    <h1><%= data.name %>のデータ削除</h1>
+    <form action="/kinds/2/skytree/delete/<%= data.id %>" method="POST">
+        <input type="checkbox" name="deletething" value="place"id="place">
+        <label for="place">位置 (<%= data.place %>)</label><br>
+        <input type="checkbox" name="deletething" value="feat" id="feat">
+        <label for="feat">特徴 (<%= data.feat %>)</label><br>
+        <input type="checkbox" name="deletething" value="struct" id="struct">
+        <label for="struct">構造 (<%= data.struct %>)</label><br>
+        <input type="checkbox" name="deletething" value="time" id="time">
+        <label for="nota">開館時間 (<%= data.time %>)</label><br>
+
+      <% Object.keys(data).forEach(function(key) { %>
+        <% 
+          const List = ['id', 'name', 'place', 'feat', 'struct', 'time'];
+          const NG = List.includes(key);
+        %>
+    
+      <% if (NG == false) { %>
+            
+            
+            <input type="checkbox" name="deletething" value= "<%= key %>"id="<%= key %>">
+            <label><%= key %> </label><label for="key">(<%= data[key] %>)</label><br>
+
+      <% } %>
+
+    <% }); %>
+        <br>
+        <input type="submit" value="削除">        
+
+
+    </ul>
+    </form>
+    <a href="/kinds/2/skytree/<%= data.id %>">前のページに戻る</a>
+</body>
+</html>
