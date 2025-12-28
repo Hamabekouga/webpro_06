@@ -59,7 +59,7 @@ let building = [
 let sinnarasino = [
     {id:1, name:"1号館", place:"正門入ってすぐ左手", feat:"教室が大きい", struct:"1階建て", nota:"1101, 1102など"},
     {id:2, name:"2号館", place:"1号館の後ろ", feat:"調査中", struct:"9階建て", nota:"2101, 2201など"},
-    {id:3, name:"3号館", place:"2号館を囲む形", feat:"人文・自然系の実験室あり", struct:"3階建て", nota:"3101, 3102など"},
+    {id:3, name:"3号館", place:"2号館を囲む形", feat:"人文・自然系の実験室あり", struct:"3階建て", nota:"3101, 3212など"},
     {id:4, name:"5号館", place:"キャンパス中央やや右寄り", feat:"講義棟", struct:"3階建て", nota:"5101, 5201など"},
     {id:5, name:"6号館", place:"キャンパス中央下", feat:"図書館がある", struct:"2階建て", nota:"図書館、自学自習室"},
     {id:6, name:"7号館", place:"キャンパス中央上", feat:"ガラス張り", struct:"2階建て", nota:"7101, 7202など"},

@@ -414,7 +414,7 @@ app.get("/religion/4/sikoku/edit/:number", (req, res) => {
 app.post("/religion/4/sikoku/update/:number", (req, res) => {
   const number = req.params.number;
   const index = number - 1;
-  let Data = kinki[index];
+  let Data = sikoku[index];
   Object.keys(req.body).forEach(function(key) {
         
         if (key !== 'newthing' && key !== 'newvalue' && key !== 'id') {

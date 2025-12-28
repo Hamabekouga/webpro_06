@@ -11,7 +11,7 @@ let mall =[
     {num:3, mall:"EKIMAE MALL"},
     {num:4, mall:"ACTIVE MALL"}
 
-]
+];
   res.render('mall', {data: mall} );
 });
 app.get("/mall/0", (req, res) => {
@@ -54,7 +54,7 @@ let building = [
 });
 
 let EKIMAE = [
-    {id:1, name:"1階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(グッズ系の店多め)", examshop:"DAISO, 無印良品, Zoffなど"},
+    {id:1, name:"1階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(グッズ系の店多め)", examshop:"DAISO、無印良品、Zoffなど"},
     {id:2, name:"2階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(グッズ、ファッション系の店多め)", examshop:"ONWARD CROSSET SELECT、KIDS REPUBLIC、未来屋書店など"},
     {id:3, name:"3階", pet:"できない", parking:"立体駐車場あり", shopjenre:"グルメ、アミューズメント系の店多め", examshop:"スカイパーク、スペースアスレチックトンデミ、サイゼリヤ、幸楽苑など"}
 
@@ -70,7 +70,7 @@ let PET = [
 let GRAND = [
     {id:1, name:"1階", pet:"一部エリアのみ可能", parking:"立体駐車場あり", shopjenre:"様々", examshop:"蔦屋書店、島村楽器、ミスタードーナツ、総合クリニックなど"   },
     {id:2, name:"2階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(ファッション多め)", examshop:"ユニクロ、H＆M、GUなど"    },
-    {id:3, name:"3階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(アミューズメント多め)", examshop:"イオンシネマ、よしもと幕張イオンモール劇場、namco、ムラサキスポーツ"    },
+    {id:3, name:"3階", pet:"できない", parking:"立体駐車場あり", shopjenre:"様々(アミューズメント多め)", examshop:"イオンシネマ、よしもと幕張イオンモール劇場、namco、ムラサキスポーツなど"    },
     {id:4, name:"4階", pet:"できない", parking:"立体駐車場あり", shopjenre:"景色系", examshop:"グランドテラス、Prayer Roomなど"    }
 
 ];
@@ -311,7 +311,7 @@ app.post("/mall/0/GRAND/delete/:id", (req, res) => {
         items.forEach((key) => {
             // key には "capital" や "population" が入っています
             // target["capital"] = "-" のように書き換わります
-            target[key] = ""; // 空白にしたければ "" にしてください
+            target[key] = ""; 
         });
     }
     res.redirect('/mall/0/GRAND/' + id );
@@ -351,7 +351,7 @@ app.post("/mall/1/PET/delete/:id", (req, res) => {
         items.forEach((key) => {
             // key には "capital" や "population" が入っています
             // target["capital"] = "-" のように書き換わります
-            target[key] = ""; // 空白にしたければ "" にしてください
+            target[key] = ""; 
         });
     }
     res.redirect('/mall/1/PET/' + id );
@@ -391,7 +391,7 @@ app.post("/mall/2/EKIMAE/delete/:id", (req, res) => {
         items.forEach((key) => {
             // key には "capital" や "population" が入っています
             // target["capital"] = "-" のように書き換わります
-            target[key] = ""; // 空白にしたければ "" にしてください
+            target[key] = ""; 
         });
     }
     res.redirect('/mall/2/EKIMAE/' + id );
@@ -431,7 +431,7 @@ app.post("/mall/3/ACTIVE/delete/:id", (req, res) => {
         items.forEach((key) => {
             // key には "capital" や "population" が入っています
             // target["capital"] = "-" のように書き換わります
-            target[key] = ""; // 空白にしたければ "" にしてください
+            target[key] = ""; 
         });
     }
     res.redirect('/mall/3/ACTIVE/' + id );
