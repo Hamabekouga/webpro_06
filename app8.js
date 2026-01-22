@@ -11,6 +11,7 @@ app.use(express.urlencoded({ extended: true }));
 app.get("/hello1", (req, res) => {
   const message1 = "Hello world";
   const message2 = "Bon jour";
+  const message3 = "こんにちは";
   res.render('show', { greet1:message1, greet2:message2});
 });
 
